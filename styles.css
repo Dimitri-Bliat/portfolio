@@ -1,0 +1,292 @@
+/* Reset des marges et des paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Style général du corps de la page */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #00ff00;
+    line-height: 1.6;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh; /* Assure que le corps prend toute la hauteur de la page */
+    display: flex;
+    flex-direction: column;
+    overflow: auto; /* Empêche le dépassement de la barre noire */
+    overflow-x: hidden;
+}
+
+/* Conteneur pour l'image */
+.image-container {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: revealImage 5s ease-in-out forwards;
+    width: fit-content;
+    max-width: 100%;
+}
+
+/* Style de l'image */
+.responsive-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    filter: sepia(50%) saturate(500%) hue-rotate(70deg);
+    display: block;
+    opacity: 0.8;
+}
+
+
+/* Animation pour dévoiler l'image */
+@keyframes revealImage {
+    0% {
+        opacity: 0;
+        clip-path: inset(0 0 100% 0);
+    }
+    100% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Ajustements pour les écrans plus petits */
+@media (max-width: 768px) {
+    .responsive-image {
+        width: 90%; /* Réduit légèrement la taille sur les petits écrans */
+    }
+}
+
+/* Ajustements pour les très grands écrans */
+@media (min-width: 1200px) {
+    .responsive-image {
+        width: 80%; /* Réduit la taille sur les très grands écrans */
+    }
+}
+/* Effet de balayage CRT inversé */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 2px,
+        rgba(0, 255, 0, 0.1) 2px,
+        rgba(0, 255, 0, 0.1) 4px
+    );
+    pointer-events: none;
+    z-index: 1; /* Placer les barres vertes en arrière-plan */
+}
+
+/* Barre noire qui balaye l'écran */
+body::after {
+    content: "";
+    position: absolute;
+    top: -10%; /* Commencer légèrement au-dessus de l'écran */
+    left: 0;
+    width: 100%;
+    height: 2%; /* Hauteur de la barre noire */
+    background: rgba(0, 0, 0, 1);
+    animation: sweep 8s linear infinite; /* Durée totale de l'animation augmentée */
+    z-index: 1; /* Placer la barre noire au même niveau que les barres vertes */
+}
+
+/* Animation de balayage avec pause */
+@keyframes sweep {
+    0% {
+        top: -10%; /* Commencer légèrement au-dessus de l'écran */
+    }
+    80% {
+        top: 98%; /* Arriver au bas de l'écran à 80% de l'animation */
+    }
+    100% {
+        top: 98%; /* Rester en bas pendant les 20% restants */
+    }
+}
+
+/* Conteneur principal pour le contenu */
+.container {
+    flex: 1; /* Prend tout l'espace disponible */
+    position: relative;
+    z-index: 2; /* Placer le texte au-dessus des effets de fond */
+}
+
+/* Style du header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+header nav ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Style des sections */
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    font-size: 2em;
+    color: #00ff00;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.section p {
+    font-size: 1.2em;
+    color: #00ff00;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 0 5px #00ff00;
+    text-justify: auto;
+}
+
+/* Style des projets */
+.projet {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    max-width: 800px;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.projet h3 {
+    font-size: 1.5em;
+    color: #00ff00;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.projet p {
+    font-size: 1em;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    text-justify: auto;
+}
+
+.projet a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #00ff00;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-shadow: none;
+    text-justify: auto;
+}
+
+
+.projet a:hover {
+    background-color: #00cc00;
+}
+
+/* Style du formulaire de contact */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+
+form button {
+    padding: 10px 20px;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+form button:hover {
+    background-color: #00cc00;
+}
+
+/* Style du footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Effet de curseur clignotant */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: #00ff00;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Masquer le texte initial */
+.hidden {
+    visibility: hidden;
+}
