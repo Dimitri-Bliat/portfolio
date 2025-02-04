@@ -19,7 +19,7 @@ async function displayTextWithAnimation(elements, addCursor = true) {
         element.classList.remove('hidden'); // Rendre l'élément visible
         const text = element.textContent.trim(); // Supprimer les espaces inutiles
         element.textContent = ''; // Effacer le texte initial
-        await typeText(element, text, 30); // Écrire le texte
+        await typeText(element, text, 10); // Écrire le texte
     }
 
     // Ajouter le curseur clignotant à la dernière ligne (si demandé)

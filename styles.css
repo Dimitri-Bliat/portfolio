@@ -23,21 +23,19 @@ body {
 
 /* Conteneur pour l'image */
 .image-container {
-    display: inline-block;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
+    margin-bottom: 20px;
     opacity: 0;
+    max-width: 300%;
     animation: revealImage 5s ease-in-out forwards;
-    width: fit-content;
-    max-width: 100%;
 }
 
 /* Style de l'image */
 .responsive-image {
-    width: auto;
-    height: auto;
     max-width: 100%;
-    filter: sepia(50%) saturate(500%) hue-rotate(70deg);
+    filter: sepia(60%) saturate(500%) hue-rotate(70deg);
     display: block;
     opacity: 0.8;
 }
@@ -55,19 +53,6 @@ body {
     }
 }
 
-/* Ajustements pour les écrans plus petits */
-@media (max-width: 768px) {
-    .responsive-image {
-        width: 90%; /* Réduit légèrement la taille sur les petits écrans */
-    }
-}
-
-/* Ajustements pour les très grands écrans */
-@media (min-width: 1200px) {
-    .responsive-image {
-        width: 80%; /* Réduit la taille sur les très grands écrans */
-    }
-}
 /* Effet de balayage CRT inversé */
 body::before {
     content: "";
@@ -289,4 +274,62 @@ footer p {
 /* Masquer le texte initial */
 .hidden {
     visibility: hidden;
+}
+
+
+/* Conteneur flexible pour l'image et le texte */
+.image-text-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* Texte à droite de l'image */
+.image-text-container p {
+    max-width: 50%;
+    color: #00ff00;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #00ff00;
+    text-justify: auto;
+}
+
+/* Si on veut inverser la disposition (image à droite, texte à gauche) */
+.image-text-container.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Exemple d'image et texte inversés */
+.reverse .image-container {
+    max-width: 50%;
+}
+
+.reverse p {
+    max-width: 50%;
+    color: #00ff00;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #00ff00;
+    text-justify: auto;
+}
+
+/* Image au-dessus du texte */
+.image-text-container.column {
+    flex-direction: column; /* Disposition en colonne */
+    align-items: center; /* Centrer horizontalement */
+    gap: 20px; /* Espace entre l'image et le texte */
+}
+
+/* Ajuster la taille de l'image */
+.column .image-container {
+    max-width: 100%;
+}
+
+/* Ajuster le texte sous l'image */
+.column p {
+    text-align: center;
+    color: #00ff00;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #00ff00;
+    text-justify: auto;
 }
