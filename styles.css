@@ -320,6 +320,7 @@ footer p {
 .image-text-container.column {
     flex-direction: column; /* Disposition en colonne */
     align-items: center; /* Centrer horizontalement */
+    text-justify: auto;
     gap: 20px; /* Espace entre l'image et le texte */
 }
 

@@ -67,25 +67,3 @@ function handleTextDisplay() {
 // Démarrer l'affichage du texte lorsque la page est chargée
 document.addEventListener('DOMContentLoaded', handleTextDisplay);
 
-// Fonction pour réinitialiser l'état de la visite (optionnel, pour le débogage)
-function resetVisitState() {
-    localStorage.removeItem('hasVisited');
-    alert("Vous pouvez revoir l'animation en rechargeant la page");
-}
-
-// Optionnel : Ajouter un bouton pour réinitialiser l'état de la visite (utile pour le débogage)
-const resetButton = document.createElement('button');
-resetButton.textContent = "Vous voulez revoir l'animation ?";
-resetButton.style.position = 'fixed';
-resetButton.style.bottom = '10px';
-resetButton.style.right = '10px';
-resetButton.style.zIndex = '1000';
-resetButton.style.padding = '10px';
-resetButton.style.backgroundColor = '#00ff00';
-resetButton.style.color = '#000';
-resetButton.style.border = 'none';
-resetButton.style.borderRadius = '5px';
-resetButton.style.cursor = 'pointer';
-resetButton.addEventListener('click', resetVisitState);
-
-document.body.appendChild(resetButton);
