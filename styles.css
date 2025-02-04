@@ -14,13 +14,13 @@ body {
     line-height: 1.6;
     padding: 20px;
     position: relative;
-    min-height: 100vh; /* Assure que le corps prend toute la hauteur de la page */
+    min-height: 100vh;
+    /* Assure que le corps prend toute la hauteur de la page */
     display: flex;
     flex-direction: column;
-    overflow: auto; /* Empêche le dépassement de la barre noire */
+    overflow: auto;
+    /* Empêche le dépassement de la barre noire */
     overflow-x: hidden;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* Conteneur pour l'image */
@@ -29,6 +29,8 @@ body {
     flex-wrap: wrap;
     overflow: hidden;
     margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
     opacity: 0;
     max-width: 300%;
     animation: revealImage 5s ease-in-out forwards;
@@ -49,6 +51,7 @@ body {
         opacity: 0;
         clip-path: inset(0 0 100% 0);
     }
+
     100% {
         opacity: 1;
         clip-path: inset(0 0 0 0);
@@ -63,47 +66,57 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        transparent,
-        transparent 2px,
-        rgba(0, 255, 0, 0.1) 2px,
-        rgba(0, 255, 0, 0.1) 4px
-    );
+    background: repeating-linear-gradient(transparent,
+            transparent 2px,
+            rgba(0, 255, 0, 0.1) 2px,
+            rgba(0, 255, 0, 0.1) 4px);
     pointer-events: none;
-    z-index: 1; /* Placer les barres vertes en arrière-plan */
+    z-index: 1;
+    /* Placer les barres vertes en arrière-plan */
 }
 
 /* Barre noire qui balaye l'écran */
 body::after {
     content: "";
     position: absolute;
-    top: -10%; /* Commencer légèrement au-dessus de l'écran */
+    top: -10%;
+    /* Commencer légèrement au-dessus de l'écran */
     left: 0;
     width: 100%;
-    height: 2%; /* Hauteur de la barre noire */
+    height: 2%;
+    /* Hauteur de la barre noire */
     background: rgba(0, 0, 0, 1);
-    animation: sweep 8s linear infinite; /* Durée totale de l'animation augmentée */
-    z-index: 1; /* Placer la barre noire au même niveau que les barres vertes */
+    animation: sweep 8s linear infinite;
+    /* Durée totale de l'animation augmentée */
+    z-index: 1;
+    /* Placer la barre noire au même niveau que les barres vertes */
 }
 
 /* Animation de balayage avec pause */
 @keyframes sweep {
     0% {
-        top: -10%; /* Commencer légèrement au-dessus de l'écran */
+        top: -10%;
+        /* Commencer légèrement au-dessus de l'écran */
     }
+
     80% {
-        top: 98%; /* Arriver au bas de l'écran à 80% de l'animation */
+        top: 98%;
+        /* Arriver au bas de l'écran à 80% de l'animation */
     }
+
     100% {
-        top: 98%; /* Rester en bas pendant les 20% restants */
+        top: 98%;
+        /* Rester en bas pendant les 20% restants */
     }
 }
 
 /* Conteneur principal pour le contenu */
 .container {
-    flex: 1; /* Prend tout l'espace disponible */
+    flex: 1;
+    /* Prend tout l'espace disponible */
     position: relative;
-    z-index: 2; /* Placer le texte au-dessus des effets de fond */
+    z-index: 2;
+    /* Placer le texte au-dessus des effets de fond */
     text-justify: auto;
 }
 
@@ -221,7 +234,8 @@ form label {
     text-shadow: 0 0 5px #00ff00;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -320,10 +334,13 @@ footer p {
 
 /* Image au-dessus du texte */
 .image-text-container.column {
-    flex-direction: column; /* Disposition en colonne */
-    align-items: center; /* Centrer horizontalement */
+    flex-direction: column;
+    /* Disposition en colonne */
+    align-items: center;
+    /* Centrer horizontalement */
     text-justify: auto;
-    gap: 20px; /* Espace entre l'image et le texte */
+    gap: 20px;
+    /* Espace entre l'image et le texte */
 }
 
 /* Ajuster la taille de l'image */
