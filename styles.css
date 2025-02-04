@@ -102,6 +102,7 @@ body::after {
     flex: 1; /* Prend tout l'espace disponible */
     position: relative;
     z-index: 2; /* Placer le texte au-dessus des effets de fond */
+    text-justify: auto;
 }
 
 /* Style du header */
