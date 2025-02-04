@@ -194,11 +194,13 @@ header nav ul li a:hover {
     font-weight: bold;
     text-shadow: none;
     text-justify: auto;
+    width: auto;
 }
 
 
 .projet a:hover {
     background-color: #00cc00;
+    width: auto;
 }
 
 /* Style du formulaire de contact */
