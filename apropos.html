@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="typed-text hidden">Portfolio Carrière Lilian</h1>
+            <h1>Portfolio Carrière Lilian</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
@@ -35,17 +35,17 @@
 
             <div class="projet">
                 <p>Mon parcours scolaire :</p>
-                <a href="formation.html">Voir ma formation</a>
+                <button class="open-modal" data-modal="formation">Voir ma formation</button>
             </div>
 
             <div class="projet">
                 <p>Mes passions :</p>
-                <a  href="passions.html">Voir mes passions</a>
+                <button class="open-modal" data-modal="passions">Voir mes passions</button>
             </div>
 
             <div class="projet">
-                <p >Mon CV :</p>
-                <a  href="CV_Carrière_Lilian.pdf">Voir quelque chose un jour peut être</a>
+                <p>Mon CV :</p>
+                <button class="open-modal" data-modal="cv">Voir quelque chose un jour peut être</button>
             </div>
         </div>
     </section>
@@ -56,7 +56,45 @@
         </div>
     </footer>
 
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+document.querySelectorAll('.open-modal').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const type = this.getAttribute('data-modal');
+        let content = '';
+        if (type === 'formation') {
+            content = `<h2>Ma formation</h2>
+                <img src="logogeii.png" alt="Logo GEII" class="responsive-image">
+                <p>!! WORK IN PROGRESS !!</p>`;
+        } else if (type === 'passions') {
+            content = `<h2>Mes passions</h2>
+                <p>Musique (Metal), jeux vidéo, histoire/géo, etc.</p>
+                <img src="Gojiranoir.jpg" alt="Gojira" class="responsive-image">`;
+        } else if (type === 'cv') {
+            content = `<h2>Mon CV</h2>
+        <iframe src="CV_Carrière_Lilian.pdf" width="100%" height="500px" style="border:none; border-radius:6px; background:#222;"></iframe>
+        <p style="margin-top:12px;"><a href="CV_Carrière_Lilian.pdf" target="_blank" style="color:#00bcd4;">Télécharger le CV (PDF)</a></p>`;
+        }
+        document.getElementById('modalBody').innerHTML = content;
+        document.getElementById('modal').style.display = 'block';
+    });
+});
+document.getElementById('modalClose').onclick = function() {
+    document.getElementById('modal').style.display = 'none';
+};
+window.onclick = function(event) {
+    if (event.target == document.getElementById('modal')) {
+        document.getElementById('modal').style.display = 'none';
+    }
+};
+</script>
 </body>
 
 </html>

@@ -1,358 +1,668 @@
-/* Reset des marges et des paddings */
-* {
+/* Space-inspired theme for the whole site */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #0a0a23;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-
-/* Style général du corps de la page */
-body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #000;
-    color: #00ff00;
-    line-height: 1.6;
-    padding: 20px;
-    position: relative;
     min-height: 100vh;
-    /* Assure que le corps prend toute la hauteur de la page */
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    /* Empêche le dépassement de la barre noire */
+    position: relative;
     overflow-x: hidden;
+    transition: none;
+    padding-top: 110px; /* ajuste selon la hauteur de ton header */
+    background: linear-gradient(to bottom, #0a0a23 0%, #13162a 100%);
 }
 
-/* Conteneur pour l'image */
-.image-container {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    margin-bottom: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    opacity: 0;
-    max-width: 300%;
-    animation: revealImage 5s ease-in-out forwards;
-}
-
-/* Style de l'image */
-.responsive-image {
-    max-width: 100%;
-    filter: sepia(60%) saturate(500%) hue-rotate(70deg);
-    display: block;
-    opacity: 0.8;
-}
-
-
-/* Animation pour dévoiler l'image */
-@keyframes revealImage {
-    0% {
-        opacity: 0;
-        clip-path: inset(0 0 100% 0);
-    }
-
-    100% {
-        opacity: 1;
-        clip-path: inset(0 0 0 0);
-    }
-}
-
-/* Effet de balayage CRT inversé */
+/* Optional: animated stars background */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    background: url('https://raw.githubusercontent.com/JulianLaval/canvas-space-background/master/demo/stars.png') repeat;
+    opacity: 0.25;
+    animation: moveStars 120s linear infinite;
+}
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 500px; }
+}
+
+header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(transparent,
-            transparent 2px,
-            rgba(0, 255, 0, 0.1) 2px,
-            rgba(0, 255, 0, 0.1) 4px);
-    pointer-events: none;
-    z-index: 1;
-    /* Placer les barres vertes en arrière-plan */
+    z-index: 1001;
+    background: rgba(10, 18, 38, 0.85); /* fond sombre semi-transparent */
+    backdrop-filter: blur(8px);          /* effet de flou */
+    box-shadow: 0 4px 32px #1e2746;
+    border-bottom: 2.5px solid #3fa7d6; /* bordure lumineuse */
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1), background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 72px;
 }
 
-/* Barre noire qui balaye l'écran */
-body::after {
-    content: "";
-    position: absolute;
-    top: -10%;
-    /* Commencer légèrement au-dessus de l'écran */
-    left: 0;
-    width: 100%;
-    height: 2%;
-    /* Hauteur de la barre noire */
-    background: rgba(0, 0, 0, 1);
-    animation: sweep 8s linear infinite;
-    /* Durée totale de l'animation augmentée */
-    z-index: 1;
-    /* Placer la barre noire au même niveau que les barres vertes */
-}
-
-/* Animation de balayage avec pause */
-@keyframes sweep {
-    0% {
-        top: -10%;
-        /* Commencer légèrement au-dessus de l'écran */
-    }
-
-    80% {
-        top: 98%;
-        /* Arriver au bas de l'écran à 80% de l'animation */
-    }
-
-    100% {
-        top: 98%;
-        /* Rester en bas pendant les 20% restants */
-    }
-}
-
-/* Conteneur principal pour le contenu */
-.container {
-    flex: 1;
-    /* Prend tout l'espace disponible */
-    position: relative;
-    z-index: 2;
-    /* Placer le texte au-dessus des effets de fond */
-    text-justify: auto;
-}
-
-/* Style du header */
-header {
-    text-align: center;
-    margin-bottom: 40px;
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vw;
 }
 
 header h1 {
-    font-size: 2.5em;
-    color: #00ff00;
-    text-shadow: 0 0 5px #00ff00;
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #fff;
+    /* SUPPRIMER ou commenter la ligne suivante */
+    /* text-shadow: 0 2px 12px #3fa7d6; */
+    text-shadow: none;
+    transition: text-shadow 0.2s;
+    cursor: pointer;
+}
+
+header h1:hover {
+    /* SUPPRIMER ou commenter la ligne suivante */
+    /* text-shadow: 0 0 24px #3fa7d6, 0 0 2px #fff; */
+    text-shadow: none;
 }
 
 header nav ul {
     list-style: none;
-    margin-top: 10px;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #00ff00;
-    text-decoration: none;
-    font-weight: bold;
-    text-shadow: 0 0 5px #00ff00;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Style des sections */
-.section {
-    margin-bottom: 40px;
-}
-
-.section h2 {
-    font-size: 2em;
-    color: #00ff00;
-    margin-bottom: 20px;
-    text-shadow: 0 0 5px #00ff00;
-}
-
-.section p {
-    font-size: 1.2em;
-    color: #00ff00;
-    max-width: 800px;
-    margin: 0 auto;
-    text-shadow: 0 0 5px #00ff00;
-    text-justify: auto;
-}
-
-/* Style des projets */
-.projet {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    margin: 20px auto;
-    border: 1px solid #00ff00;
-    border-radius: 5px;
-    max-width: 800px;
-    box-shadow: 0 0 10px #00ff00;
-}
-
-.projet h3 {
-    font-size: 1.5em;
-    color: #00ff00;
-    margin-bottom: 10px;
-    text-shadow: 0 0 5px #00ff00;
-}
-
-.projet p {
-    font-size: 1em;
-    color: #00ff00;
-    text-shadow: 0 0 5px #00ff00;
-    text-justify: auto;
-}
-
-.projet a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #00ff00;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    text-shadow: none;
-    text-justify: auto;
-    width: auto;
-}
-
-
-.projet a:hover {
-    background-color: #00cc00;
-    width: auto;
-}
-
-/* Style du formulaire de contact */
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #00ff00;
-    text-shadow: 0 0 5px #00ff00;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #00ff00;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
-    text-shadow: 0 0 5px #00ff00;
-}
-
-
-form button {
-    padding: 10px 20px;
-    background-color: #00ff00;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-shadow: none;
-}
-
-form button:hover {
-    background-color: #00cc00;
-}
-
-/* Style du footer */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #00ff00;
-    text-shadow: 0 0 5px #00ff00;
-}
-
-footer p {
     margin: 0;
 }
 
-/* Effet de curseur clignotant */
-.cursor {
-    display: inline-block;
-    width: 10px;
-    height: 20px;
-    background-color: #00ff00;
-    animation: blink 1s steps(2, start) infinite;
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 22px;
+    border-radius: 24px;
+    transition: 
+        color 0.2s,
+        background 0.2s,
+        box-shadow 0.2s;
+    /* SUPPRIMER ou commenter la ligne suivante */
+    /* box-shadow: 0 0 8px #3fa7d6 inset; */
+    box-shadow: none;
+    letter-spacing: 1px;
 }
 
-@keyframes blink {
-    to {
-        visibility: hidden;
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #0a0a23;
+    background: #3fa7d6;
+    /* SUPPRIMER ou commenter la ligne suivante */
+    /* box-shadow: 0 0 16px #3fa7d6, 0 2px 8px #1e2746; */
+    box-shadow: none;
+}
+
+header nav ul li a.active {
+    position: relative;
+    background: #3fa7d6;
+    color: #0a0a23;
+    box-shadow: none;
+}
+
+header nav ul li a.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 6px;
+    height: 4px;
+    border-radius: 2px;
+    background: #ffcc00; /* couleur de la barre, change si besoin */
+    z-index: 2;
+}
+
+@media (max-width: 900px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 12px;
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+    header nav ul li {
+        width: 100%;
+        margin: 8px 0;
+    }
+    header nav ul li a {
+        width: 100%;
+        display: block;
+        text-align: left;
+    }
+    #projets .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    #projets .container {
+        grid-template-columns: 1fr;
     }
 }
 
-/* Masquer le texte initial */
-.hidden {
-    visibility: hidden;
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #e0e6f0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    transition: none;
 }
 
-
-/* Conteneur flexible pour l'image et le texte */
-.image-text-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
+.section {
+    padding: 56px 0;
+    margin: 0 0 32px 0;
+    background: none;      /* transparent */
+    border-radius: 0;
+    box-shadow: none;
+    gap: 32px;
+    position: relative;
+    z-index: 1;
 }
 
-
-/* Texte à droite de l'image */
-.image-text-container p {
-    max-width: 50%;
-    color: #00ff00;
-    font-size: 1.2em;
-    text-shadow: 0 0 5px #00ff00;
-    text-justify: auto;
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vw;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background: none;      /* transparent */
 }
 
-/* Si on veut inverser la disposition (image à droite, texte à gauche) */
-.image-text-container.reverse {
-    flex-direction: row-reverse;
-}
-
-/* Exemple d'image et texte inversés */
-.reverse .image-container {
-    max-width: 50%;
-}
-
-.reverse p {
-    max-width: 50%;
-    color: #00ff00;
-    font-size: 1.2em;
-    text-shadow: 0 0 5px #00ff00;
-    text-justify: auto;
-}
-
-/* Image au-dessus du texte */
-.image-text-container.column {
-    flex-direction: column;
-    /* Disposition en colonne */
-    align-items: center;
-    /* Centrer horizontalement */
-    text-justify: auto;
-    gap: 20px;
-    /* Espace entre l'image et le texte */
-}
-
-/* Ajuster la taille de l'image */
-.column .image-container {
-    max-width: 100%;
-}
-
-/* Ajuster le texte sous l'image */
-.column p {
+.hero {
+    background: linear-gradient(120deg, #232946 60%, #0a0a23 100%);
+    color: #fff;
+    padding: 120px 0 80px 0;
     text-align: center;
-    color: #00ff00;
-    font-size: 1.2em;
-    text-shadow: 0 0 5px #00ff00;
-    text-justify: auto;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid #3fa7d6;
+    box-shadow: 0 4px 32px #1e2746;
 }
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    /* Remove any text-shadow for hero section */
+    text-shadow: none;
+}
+.hero p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 32px auto;
+    /* Remove any text-shadow for hero section */
+    text-shadow: none;
+}
+.hero .cta-btn {
+    background: #3fa7d6;
+    color: #fff;
+    border: none;
+    border-radius: 28px;
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 0 16px #3fa7d6;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.hero .cta-btn:hover {
+    background: #fff;
+    color: #3fa7d6;
+    box-shadow: 0 0 32px #3fa7d6;
+}
+
+footer {
+    background: transparent;
+    color: #b0b8d1;
+    padding: 32px 0 0 0;
+    text-align: center;
+    box-shadow: none;
+    letter-spacing: 1px;
+    z-index: 1;
+    position: relative;
+    margin-bottom: 0;
+    /* plus de margin négatif, plus de z-index spécial */
+    /* plus de border-top si tu n’en veux pas */
+}
+
+.projet {
+    background: none;      /* transparent */
+    padding: 24px 16px;
+    margin: 0;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px #1e2746;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    max-width: 100%;
+    vertical-align: top;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+.projet:hover {
+    box-shadow: 0 0 16px #3fa7d6, 0 2px 8px #1e2746;
+}
+
+/* Remove grid from #projets .container */
+#projets .container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vw;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background: none;
+    /* Remove grid properties */
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+    justify-items: normal;
+    align-items: normal;
+}
+
+/* Only .projets-grid is a grid */
+.projets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 0;
+    overflow: visible; /* Ensure 3D context is not clipped */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .projets-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .projets-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+img.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    margin: 16px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px #3fa7d6;
+    border: 2px solid #232946;
+    background: #0a0a23;
+}
+
+a {
+    color: #3fa7d6;
+    text-decoration: none;
+    transition: color 0.2s, text-shadow 0.2s;
+    font-weight: 600;
+}
+a:hover {
+    color: #fff;
+    /* Remove any text-shadow or glow on section titles, paragraphs, footer, and hovered links */
+    text-shadow: none;
+}
+
+button, .open-modal {
+    background: #3fa7d6;
+    color: #0a0a23;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin-top: 12px;
+    box-shadow: none; /* retire la luminescence */
+    letter-spacing: 1px;
+}
+button:hover, .open-modal:hover {
+    background: #fff;
+    color: #3fa7d6;
+    box-shadow: none; /* retire la luminescence au hover */
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    overflow: auto;
+    background: rgba(10,10,35,0.92);
+}
+
+.modal-content {
+    background: rgba(10, 10, 35, 0.85); /* plus transparent */
+    margin: 6% auto;
+    padding: 32px 24px;
+    border-radius: 16px;
+    width: 95%;
+    max-width: 900px;
+    color: #e0e6f0;
+    position: relative;
+    box-shadow: none;
+    animation: modalIn 0.2s;
+}
+
+@keyframes modalIn {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    font-size: 2rem;
+    color: #3fa7d6;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.modal-close:hover {
+    color: #fff;
+}
+
+/* Menu navigation responsive */
+.nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+@media (max-width: 900px) {
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0; right: 0;
+        height: 100vh;
+        width: 220px;
+        background: #18191a;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 24px 24px 24px;
+        box-shadow: -2px 0 16px rgba(0,0,0,0.4);
+        z-index: 1050;
+        transition: transform 0.3s;
+    }
+    .nav-menu.open {
+        display: flex;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-menu ul li {
+        margin: 18px 0;
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* optionnel : espace sous le header fixe */
+}
+
+.image-container,
+.image-text-container,
+.image-text-container.reverse {
+    background: none !important;
+}
+
+.contact-card {
+    background: rgba(20, 40, 70, 0.85);
+    border: 1.5px solid #3fa7d6;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px #3fa7d6;
+    padding: 24px 20px;
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 480px;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+.contact-card label {
+    color: #3fa7d6;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+.contact-card a {
+    color: #fff;
+    font-weight: 600;
+    word-break: break-all;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.contact-card a:hover {
+    color: #3fa7d6;
+}
+
+.header-hide {
+    transform: translateY(-120%);
+}
+
+.hidden-section {
+    display: none;
+    animation: fadeInSection 0.4s;
+}
+.visible-section {
+    display: block;
+    animation: fadeInSection 0.4s;
+}
+@keyframes fadeInSection {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Flip card styles */
+.flip-card {
+  perspective: 1200px;
+  position: relative;
+  height: 320px;
+  min-height: 320px;
+  background: none;
+  transition:
+    width 0.5s cubic-bezier(.4,0,.2,1),
+    height 0.5s cubic-bezier(.4,0,.2,1),
+    top 0.5s cubic-bezier(.4,0,.2,1),
+    left 0.5s cubic-bezier(.4,0,.2,1),
+    transform 0.5s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.4s;
+  z-index: 1;
+  overflow: visible; /* Allow 3D children to show */
+  transform-style: preserve-3d; /* Maintain 3D context for children */
+  transform-origin: center center; /* Make the grow effect start from the card itself */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(.4,0,.2,1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  background: rgba(20, 40, 70, 0.92);
+  box-shadow: none !important;
+  /* Remove padding here to ensure same size */
+  padding: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  z-index: 3;
+  /* If you want padding for content, use an inner wrapper: */
+}
+.flip-card-back .back-content {
+  padding: 24px 16px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-btn, .expand-btn, .close-expand-btn {
+  margin-top: 18px;
+  background: #3fa7d6;
+  color: #0a0a23;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.flip-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 2;
+  margin: 0;
+  background: rgba(63, 167, 214, 0.95);
+  /* Optionally add a little shadow for readability */
+  box-shadow: 0 2px 8px rgba(10,10,35,0.15);
+}
+
+.flip-btn:hover, .expand-btn:hover, .close-expand-btn:hover {
+  background: #fff;
+  color: #3fa7d6;
+}
+
+/* Expanded card overlay */
+.flip-card.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  max-width: 900px;
+  height: 80vh;
+  min-height: 400px;
+  z-index: 2000;
+  box-shadow: 0 8px 48px #1e2746;
+  transform: translate(-50%, -50%) scale(1.0); /* Center and scale from card */
+  transition:
+    width 0.4s cubic-bezier(.4,0,.2,1),
+    height 0.4s cubic-bezier(.4,0,.2,1),
+    top 0.4s cubic-bezier(.4,0,.2,1),
+    left 0.4s cubic-bezier(.4,0,.2,1),
+    transform 0.4s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.4s;
+}
+
+.flip-card.expanded .flip-card-inner {
+  transform: rotateY(180deg) !important;
+}
+
+.flip-card.expanded .flip-card-back {
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px 32px;
+  overflow-y: auto;
+}
+
+.flip-card.expanded .expand-btn {
+  display: none;
+}
+
+.flip-card.expanded .close-expand-btn {
+  display: block;
+  margin-top: 24px;
+}
+
+.close-expand-btn {
+  display: none;
+  background: #d63f3f;
+  color: #fff;
+}
+
+.projet,
+.flip-card-front,
+.flip-card-back,
+.flip-card.expanded {
+  box-shadow: none !important;
+}
+
+.projet-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  background: #232946;
+  box-shadow: none;
+  display: block;
+}
+
+.projet-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
+}
+
+.flip-card, .projet.flip-card {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  min-height: 0;
+  max-height: 340px;
+}
+
