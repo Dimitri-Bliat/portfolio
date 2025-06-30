@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 content = `
                     <h2>Projet SmartLight</h2>
                     <p>Le projet SmartLight aura été la première introduction au monde du projet dans le domaine du GEII. Ce projet simple m'aura notamment permis de prendre
-                    En main la conception de PCB sur KiCad et de découvrir la microsoudure. J'ai aussi pu réaliser des programmes simples pour
+                    en main la conception de PCB sur KiCad et de découvrir la microsoudure. J'ai aussi pu réaliser des programmes simples pour
                     faire fonctionner ce dispositif dont le but est de contrôler une lampe en fonction de l'intensité lumineuse ambiante, ou via
                     des boutons présents sur la carte.</p>
                     <div class="image-container" style="max-width: 1000px; align-items: center;">
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (type === 'projet2') {
                 content = `
         <h2>Projet Assistant Domotique</h2>
-        <p>Ce projet intervient au cours de la seconde année de BUT GEII. Il consiste à développer une carte électronique permettant d'accueillir les composants nécéssaires
+        <p>Ce projet intervient au cours de la seconde année de BUT GEII. Il consiste à développer une carte électronique permettant d'accueillir les composants nécessaires
         à la mise en place d'un système domotique simple. L'objectif de ce projet est de familiariser les étudiants avec les pratiques de
         développement d'un produit électronique et de leur faire comprendre l'intérêt de la documentation.</p>
         <iframe src="Dossier de fabrication.pdf" width="100%" height="700px" style="border:none; border-radius:6px; background:#222; margin-top:24px;"></iframe>
@@ -149,8 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (type === 'projet3') {
                 content = `
         <h2>Projet Programmation du robot éviteur d'obstacle avec Mr Gies</h2>
-        <p>L'objectif de ce projet est de faire évoluer les capacités de programmation embarqués des étudiants en utilisant des robots éviteur d'obstacles
-        utilisés dans le cadre d'une pseudo compétition. Les scéances de projet ont permis de se familiariser avec MPlabX et Visual Studio, et de comprendre
+        <p>L'objectif de ce projet est de faire évoluer les capacités de programmation embarquées des étudiants en utilisant des robots éviteurs d'obstacles
+        utilisés dans le cadre d'une pseudo compétition. Les séances de projet ont permis de se familiariser avec MPlabX et Visual Studio, et de comprendre
         le fonctionnement de plusieurs principes fondamentaux de la programmation pour la robotique.</p>
         <iframe src="Compte rendu TP2 Robotique Brunner Carrière.pdf" width="100%" height="700px" style="border:none; border-radius:6px; background:#222; margin-top:24px;"></iframe>
         <p style="margin-top:12px;">
@@ -164,14 +164,14 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (type === 'projet4') {
                 content = `
                 <h2>Projet Maquette de vérification</h2>
-                <p>L'objectif de ce projet été de permettre aux étudiants de découvrir les méthodes de vérification et de test
+                <p>L'objectif de ce projet était de permettre aux étudiants de découvrir les méthodes de vérification et de test
                 qu'il faut mettre en place lorsque l'on tente de dépanner un système électronique.</p>`;
             } else if (type === 'projet5') {
                 content = `
         <h2>Projet Opti'Plant</h2>
         <p>Le projet Opti'Plant est le résultat du travail collaboratif des étudiants d'AII et d'ESE sur le dernier semestre de la troisième année 
         du BUT GEII. Pour les ESE, ce projet consiste en la création d'une interface web et d'une base de données pour un système d'ombrière
-        intelligente. Cette ombrière est conçue pour récuperer l'eau de pluie et arroser des plans de culture. Les étudiant de la spécialisation ESE ont
+        intelligente. Cette ombrière est conçue pour récupérer l'eau de pluie et arroser des plans de culture. Les étudiants de la spécialisation ESE ont
         alors découvert l'importance de la coordination d'équipes et les différentes phases d'un projet de grande ampleur.</p>
         <iframe src="Rapport_Projet_OptiPlant_ESE_B.pdf" width="100%" height="700px" style="border:none; border-radius:6px; background:#222; margin-top:24px;"></iframe>
         <p style="margin-top:12px;">
@@ -181,15 +181,15 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (type === 'projet6') {
                 content = `
                 <h2>Projet Emetteur Récepteur</h2>
-                <p>Ce projet de fin de première année à pour objectif de concevoir un système de communication sans fil en équipe de 4.
-                Il permet notemment de mettre en oeuvre les connaissances en électronique et en programmation acquises durant l'année et
+                <p>Ce projet de fin de première année a pour objectif de concevoir un système de communication sans fil en équipe de 4.
+                Il permet notamment de mettre en oeuvre les connaissances en électronique et en programmation acquises durant l'année et
                 d'apporter aux étudiants une première approche de la gestion du temps et des ressources dans un projet technique.</p>`;
             } else if (type === 'projetbob') {
                 content = `
                     <h2>Projet Programmation d'un robot éviteur d'obstacle simple</h2>
-                    <p>L'objectif de ce projet de fin de première année, est de mettre les étudiants en équipe de 2 sur le développement 
+                    <p>L'objectif de ce projet de fin de première année est de mettre les étudiants en équipe de 2 sur le développement 
                     du programme d'un robot devant être capable d'éviter des obstacles en vue de participer à une compétition interne.
-                    Ce projet permet de faire évoluer les compétences en programmations et en logique/algorithmique des étudiants tout en apportant
+                    Ce projet permet de faire évoluer les compétences en programmation et en logique/algorithmique des étudiants tout en apportant
                     une touche d'amusement.</p>
                     <div class="image-container" style="max-width: 1000px; align-items: center;">
                         <img src="bob.jpg" alt="Bob" class="responsive-image">
@@ -199,12 +199,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 content = `
         <h2>Projet Station satellite autonome</h2>
         <p>Le projet de station satellite autonome consiste en la mise en marche d'un dispositif permettant de contrôler un rotor dirigeant des antennes afin de 
-        cibler des satellites lors de leurs passages dans le ciel. Ce projet à été divisé en deux parties. La première fut effectuée à la fin de la seconde année de BUT GEII. Pour cette
-        première phase, l'objectif été d'assembler, de programmer et d'essayer une carte électronique servant d'interface électronique 
+        cibler des satellites lors de leurs passages dans le ciel. Ce projet a été divisé en deux parties. La première fut effectuée à la fin de la seconde année de BUT GEII. Pour cette
+        première phase, l'objectif était d'assembler, de programmer et d'essayer une carte électronique servant d'interface électronique 
         entre le module de contrôle du rotor de la station et l'ESP32 utilisé pour permettre la programmation des déplacements de la station.
-        La seconde phase du projet réalisée au début de la troisème année consiste en une refonte totale de la méthode de contrôle de la station
-        avec la conception d'un nouveau design de carte électronique, et l'utilisation d'un nouveau contrôleur cette fois ci fonctionnant sous Linux.
-        Ce projet à donc permis de mettre en pratique les compétences de conception, d'intégration et de progammation des étudiants.
+        La seconde phase du projet réalisée au début de la troisième année consiste en une refonte totale de la méthode de contrôle de la station
+        avec la conception d'un nouveau design de carte électronique, et l'utilisation d'un nouveau contrôleur cette fois-ci fonctionnant sous Linux.
+        Ce projet a donc permis de mettre en pratique les compétences de conception, d'intégration et de programmation des étudiants.
         </p>
         <iframe src="Rapport_Projet_PointageAntenne_Gonon_Carrière.pdf" width="100%" height="700px" style="border:none; border-radius:6px; background:#222; margin-top:24px;"></iframe>
         <p style="margin-top:12px;">
@@ -218,9 +218,9 @@ document.addEventListener('DOMContentLoaded', function() {
         L'objectif pour le stagiaire est de concevoir, programmer et tester un prototype de banc d'essai pour des cartes de mesure
         de rayonnements ionisants. Le système doit générer des impulsions électriques venant simuler la captation d'une particule radioactive
         par un capteur spécifique.<br>
-        Ce projet est mené en collaboration avec les équipes de Mirion Technologies Lamanon pour un durée de 14 semaines.
-        Au cours de cette période, j'ai pu mettre en pratique les connaisances que j'ai vus au cours du BUT GEII, principalement
-        la programmation embarquée, la conception de carte électronique, et la réalisation d'essai sur une carte.</p>
+        Ce projet est mené en collaboration avec les équipes de Mirion Technologies Lamanon pour une durée de 14 semaines.
+        Au cours de cette période, j'ai pu mettre en pratique les connaissances que j'ai vues au cours du BUT GEII, principalement
+        la programmation embarquée, la conception de carte électronique et la réalisation d'essais sur une carte.</p>
         <iframe src="Rapport_Stage_BUT3_Carrière.pdf" width="100%" height="700px" style="border:none; border-radius:6px; background:#222; margin-top:24px;"></iframe>
         <p style="margin-top:12px;">
             <a href="Rapport_Stage_BUT3_Carrière.pdf" target="_blank" style="color:#00bcd4;">Télécharger le rapport de stage (PDF)</a>
@@ -239,22 +239,40 @@ document.addEventListener('DOMContentLoaded', function() {
             let content = '';
             if (type === 'formation') {
                 content = `
-        <h3>Ma formation</h3>
-        <div style="display: flex; align-items: flex-start; gap: 32px; flex-wrap: wrap;">
-            <div style="flex:1 1 260px; min-width:220px; max-width:500px;">
-                <p>Diplômé du Baccalauréat Général avec les Spécialités Mathématiques et Sciences de l'Ingénieur en 2022
-                avec option Mathématiques Expertes au sein du Lycée Rouvière</p>
-                <p>J'ai ensuite continué mes études en intégrant un BUT Génie Électrique et Informatique Industrielle (GEII) à l'IUT de Toulon.
-                Cette formation m'a permis de développer mes compétences en électronique, en programmation et, grâce à la spécialisation en 
-                Electronique et Systèmes Embarqués, en conception et en intégration de systèmes embarqués.</p>
+        <h2>Ma formation</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; margin-bottom: 24px;">
+            <div style="flex:1 1 320px; min-width:220px; max-width:480px;">
+                <h3>Baccalauréat Général</h3>
+                <ul>
+                    <li>Spécialités : Mathématiques & Sciences de l'Ingénieur</li>
+                    <li>Option Mathématiques Expertes</li>
+                    <li>Lycée Rouvière (2022)</li>
+                </ul>
+                <div class="image-container" style="max-width:260px; margin: 16px auto; background:rgba(255,255,255,0.35); border-radius:18px; padding:18px;">
+                    <img src="logo_rouviere_250_63.png" alt="Lycée Rouvière" class="responsive-image">
+                </div>
             </div>
-            <img src="image-removebg.png" alt="Logo GEII" class="responsive-image" style="max-width:350px; min-width:80px; width:100%; height:auto; flex-shrink:0;">
+            <div style="flex:1 1 320px; min-width:220px; max-width:480px;">
+                <h3>BUT GEII</h3>
+                <ul>
+                    <li>Génie Électrique et Informatique Industrielle</li>
+                    <li>Spécialité : Électronique et Systèmes Embarqués</li>
+                    <li>IUT de Toulon (2022-2025)</li>
+                </ul>
+                <div class="image-container" style="max-width:260px; margin: 16px auto; background:rgba(255,255,255,0.35); border-radius:18px; padding:18px;">
+                    <img src="2MF-Logos-partenaires-700px-Univ-TLN-V1.webp" alt="Logo GEII" class="responsive-image">
+                </div>
+            </div>
         </div>
-        <p>A l'issue de ce BUT GEII, je rejoindrai l'INSA de Rennes dans le cadre de leur formation Ingénieur Électronique - Systèmes Embarqués et Télécommunications
-        Par alternance. Cette école me permettra ainsi de faire le choix quant à ma poursuite d'études et mon choix de continuer avec un doctorat ou pas.
-        Elle me permet aussi d'acquérir les compétences nécessaires à l'accomplissement de mon projet professionnel.</p> 
-        <div>
-         <img src="insa-fiche-site.png" alt="Logo INSA Rennes" class="responsive-image" style="max-width:900px; min-width:80px; width:100%; height:auto; flex-shrink:0;">
+        <div style="margin-bottom: 24px;">
+            <h3>À venir</h3>
+            <ul>
+                <li>INSA Rennes – Ingénieur Électronique, Systèmes Embarqués et Télécommunications (en alternance)</li>
+                <li>Projet de poursuite en doctorat selon opportunités</li>
+            </ul>
+            <div class="image-container" style="max-width:420px; margin: 16px auto; background:rgba(255,255,255,0.35); border-radius:18px; padding:18px;">
+                <img src="insa-fiche-site.png" alt="Logo INSA Rennes" class="responsive-image">
+            </div>
         </div>
     `;
             } else if (type === 'passions') {
@@ -267,32 +285,33 @@ document.addEventListener('DOMContentLoaded', function() {
         <div id="passion-content">
             <!-- Contenu par défaut (Musique) -->
             <h3>Musique</h3>
-            <p>Si vous demandez à mes amis (je n'ai que toi Valentin à l'aide) ils vous dirons
-                que ce qui me défini le plus est mon amour inconditionnel pour la musique et tout particulièrement pour
+            <p>Si vous demandez à mes amis (je n'ai que toi Valentin à l'aide) ils vous diront
+                que ce qui me définit le plus est mon amour inconditionnel pour la musique et tout particulièrement pour
                 le Metal et ses genres.</p>
             <p>En effet, c'est en l'an de grâce 2015 que je découvre cet univers avec le
-                groupe Megadeth et leur titre "Rust In Peace... Polaris" qui reste pour moi l'un des meilleurs morceau
+                groupe Megadeth et leur titre "Rust In Peace... Polaris" qui reste pour moi l'un des meilleurs morceaux
                 du genre tout entier</p>
             <p>Continuant mon aventure dans ce monde, je commence à m'intéresser à de nombreux
                 groupes et genres apparentés au Trash Metal de Megadeth.
-                Je finis alors par découvrir un groupe français reconnue pour sa musique au états-unis. A cette époque,
+                Je finis alors par découvrir un groupe français reconnu pour sa musique engagée et traitant de sujets comme
+                l'écologie ou l'emprise psychique. À cette époque,
                 ce "petit" groupe attire ma curiosité et se forgea une place importante
                 au sein de mes playlists.
-                Mais c'est alors qu'un jour, le Dimande 2 Juillet 2023 alors que j'eusse pu assister au premier concert
+                Mais c'est alors qu'un jour, le dimanche 2 juillet 2023, alors que j'eus pu assister au premier concert
                 de Métal de ma vie dans les Arènes de Nîmes.
-                La première partie venait de se finir et c'est là, dès les premiers instant de jeu du groupe que j'était
-                venu voir que j'ai compris qu'un nom resterai gravé à jamais dans ma mémoire.
+                La première partie venait de se finir et c'est là, dès les premiers instants de jeu du groupe que j'étais
+                venu voir, que j'ai compris qu'un nom resterait gravé à jamais dans ma mémoire.
             </p>
             <p>Ce nom était :</p>
             <div class="image-container" style="max-width: 1000px; align-items: center;">
                 <img src="gojira.jpg" alt="Gojira" class="responsive-image">
             </div>
             <div class="image-text-container reverse">
-                <p>Encore une fois, si vous demandez à Valentin ce qui me caratérise le mieux,
-                    il vous répondra surement qu'il s'agit de mon obsession pour ce groupe (ou alors pour l'URSS mais on y
-                    reviendra peut être plus tard)
-                    Je pense effectivement pouvoir dire que je suis un de leur plus grand fan depuis cet évennement.
-                    Etant guitariste, je suis évidement capable de jouer au moins la moitié de tous leurs titres. Et
+                <p>Encore une fois, si vous demandez à Valentin ce qui me caractérise le mieux,
+                    il vous répondra sûrement qu'il s'agit de mon obsession pour ce groupe (ou alors pour l'URSS mais on y
+                    reviendra peut-être plus tard)
+                    Je pense effectivement pouvoir dire que je suis un de leurs plus grands fans depuis cet événement.
+                    Étant guitariste, je suis évidemment capable de jouer au moins la moitié de tous leurs titres. Et
                     comme en témoigne mon étagère, l'amour peut coûter cher :</p>
                 <div class="image-container">
                     <img src="lescds.jpg" alt="les cd de la mort" class="responsive-image">
@@ -309,10 +328,11 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (type === 'aptitudes') {
                 content = `
         <h2>Mes Aptitudes</h2>
-        <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start;">
-            <div style="flex:1 1 220px; min-width:180px; max-width:350px;">
-                <h3>Soft Skills</h3>
-                <ul>
+        <div style="display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px;">
+            <div style="background:rgba(20,40,70,0.92); border-radius:16px; box-shadow:0 2px 16px #1e2746; padding:28px 22px; min-width:220px; max-width:340px; flex:1 1 220px; display:flex; flex-direction:column; align-items:center;">
+                <span style="font-size:2.2rem; margin-bottom:10px;">🤝</span>
+                <h3 style="color:#3fa7d6; margin-bottom:12px;">Soft Skills</h3>
+                <ul style="text-align:left; padding-left:18px; margin:0;">
                     <li>Travail en équipe</li>
                     <li>Communication</li>
                     <li>Adaptabilité</li>
@@ -322,19 +342,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Curiosité</li>
                 </ul>
             </div>
-            <div style="flex:1 1 220px; min-width:180px; max-width:350px;">
-                <h3>Hard Skills</h3>
-                <ul>
+            <div style="background:rgba(20,40,70,0.92); border-radius:16px; box-shadow:0 2px 16px #1e2746; padding:28px 22px; min-width:220px; max-width:340px; flex:1 1 220px; display:flex; flex-direction:column; align-items:center;">
+                <span style="font-size:2.2rem; margin-bottom:10px;">🛠️</span>
+                <h3 style="color:#3fa7d6; margin-bottom:12px;">Hard Skills</h3>
+                <ul style="text-align:left; padding-left:18px; margin:0;">
                     <li>Programmation (C/C++, Python, JavaScript)</li>
                     <li>Électronique analogique et numérique</li>
                     <li>Conception de cartes électroniques (PCB)</li>
-                    <li>Maitrise de l'environnement Linux</li>
+                    <li>Maîtrise de l'environnement Linux</li>
                     <li>Utilisation d'outils de CAO (KiCad, Altium)</li>
                     <li>Rédaction de dossiers techniques</li>
                     <li>Anglais technique</li>
                 </ul>
             </div>
         </div>
+        <p style="text-align:center; color:#b0b8d1; margin-top:18px;">Ces aptitudes sont le fruit de mes expériences académiques, projets et stages.</p>
     `;
             }
             document.getElementById('modalBody').innerHTML = content;
@@ -405,13 +427,13 @@ document.addEventListener('DOMContentLoaded', function() {
                                 passionContent.innerHTML = `
                                     <h3>Histoire & Jeux vidéos</h3>
                                     <p>Depuis tout petit, je suis passionné par l'histoire et la géographie (oui je
-                                        sais un passe temps relativement "chiant" pour une majorité de personne qui à cette age préfère manger
+                                        sais un passe-temps relativement "chiant" pour une majorité de personnes qui, à cet âge, préfèrent manger
                                         des bonbons).</p>
-                                    <p>Et en ajoutant à cela mon amour pour les jeux vidéos, il était évident que
-                                        je tomberai amoureux d'une liscence aussi mythique que celle des Sid Meier's Civilization. Et avec
-                                        la sortie du VII opus (oui on compte en chiffre romain quand on doit prouver des chôses)le XI
+                                    <p>Et en ajoutant à cela mon amour pour les jeux vidéo, il était évident que
+                                        je tomberais amoureux d'une licence aussi mythique que celle des Sid Meier's Civilization. Et avec
+                                        la sortie du VII opus (oui on compte en chiffre romain quand on doit prouver des choses) le 11
                                         février (enfin le VI pour les gens privilégiés comme moi (si privilégié veut dire payer le jeu II
-                                        fois plus chère)) on peut dire que mes heures de sommeil son sur le point de subir une nette restriction budgétaire.</p>
+                                        fois plus cher)) on peut dire que mes heures de sommeil sont sur le point de subir une nette restriction budgétaire.</p>
                                     <div style="display: flex; gap: 16px; justify-content: center; margin-top: 24px;">
                                         <img src="CIV7.png" alt="Civilization VII" class="responsive-image" style="max-width:400px;">
                                         <img src="civ6.jpg" alt="Civilization VI" class="responsive-image" style="max-width:400px;">

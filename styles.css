@@ -919,3 +919,42 @@ html {
     margin-bottom: 8px;
 }
 
+/* Cartes À Propos */
+.apropos-cards-row {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+.apropos-card {
+    background: rgba(20, 40, 70, 0.92);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px #1e2746;
+    padding: 24px 18px 18px 18px;
+    min-width: 160px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.18s, box-shadow 0.18s;
+    text-align: center;
+}
+.apropos-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 8px 32px #3fa7d6, 0 2px 16px #1e2746;
+}
+.apropos-card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+.apropos-card p {
+    margin: 0 0 12px 0;
+    font-weight: 600;
+    color: #3fa7d6;
+}
+.apropos-card button {
+    margin-top: auto;
+}
+

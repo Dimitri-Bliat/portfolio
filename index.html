@@ -14,7 +14,7 @@
             <h1>Portfolio Carrière Lilian</h1>
             <nav>
                 <ul>
-                    <!-- <li><a href="#accueil">Accueil</a></li> -->
+                    <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#apropos">À Propos</a></li>
                     <li><a href="#projets">Projets</a></li>
                     <li><a href="#competences">Compétences</a></li>
@@ -24,13 +24,27 @@
         </div>
     </header>
 
-
+    <!-- Zone d'accueil -->
+    <section id="accueil" class="section">
+        <div class="container" style="text-align:center;">
+            <h2>Bienvenue sur mon portfolio !</h2>
+            <p>Découvrez mon parcours, mes projets et mes centres d'intérêts à travers ce site.</p>
+            <div style="display: flex; justify-content: center; gap: 32px; margin-top: 32px; flex-wrap: wrap;">
+                <div style="flex:1 1 300px; max-width:400px;">
+                    <img src="arianneV.jpg" alt="Photo 1" class="responsive-image">
+                </div>
+                <div style="flex:1 1 350px; max-width:500px;">
+                    <img src="rafale.jpg" alt="Photo 2" class="responsive-image">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- À Propos -->
     <section id="apropos" class="section">
         <div class="container">
             <h2>À Propos de Moi</h2>
-            <p>Pour commencer, laisser moi vous parler de ce qui me passionne et me motive au quotidien.
+            <p>Pour commencer, laissez-moi vous parler de ce qui me passionne et me motive au quotidien.
                 J'ai depuis toujours été émerveillé par la beauté du monde dans lequel nous vivons, mais ce qui me fait
                 le plus rêver c'est sans aucun doute l'Espace.
                 J'ai toujours rêvé de pouvoir participer aux recherches spatiales et de contribuer à la compréhension de
@@ -39,27 +53,35 @@
                 de m'orienter vers des études d'ingénierie.
                 Mon objectif est donc de devenir Ingénieur en Électronique et Systèmes Embarqués afin de pouvoir
                 travailler sur des projets comme des satellites ou des engins
-                d'exploration spatiale</p>
+                d'exploration spatiale.<br>
+                Je me suis aussi pris d'amour pour le domaine de l'aéronautique militaire, la France étant un des rares
+                pays européens
+                à encore faire cavalier seul dans ce domaine, et à le faire avec brio.</p>
             <br>
             <p>Je vous propose d'en apprendre plus sur moi en cliquant sur les rubriques en dessous :</p>
             <br>
-            <div class="projet">
-                <p>Une petite explication sur mon parcours au sein de l'Éducation Nationale :</p>
-                <button class="open-modal" data-modal="formation">Voir ma formation</button>
+            <div class="apropos-cards-row">
+                <div class="apropos-card">
+                    <span class="apropos-card-icon">🎓</span>
+                    <p>Mon parcours scolaire</p>
+                    <button class="open-modal" data-modal="formation">Voir ma formation</button>
+                </div>
+                <div class="apropos-card">
+                    <span class="apropos-card-icon">💡</span>
+                    <p>Ma personnalité</p>
+                    <button class="open-modal" data-modal="passions">Voir mes centres d'intérêt</button>
+                </div>
+                <div class="apropos-card">
+                    <span class="apropos-card-icon">📄</span>
+                    <p>Mon CV</p>
+                    <button class="open-modal" data-modal="cv">Accéder à mon CV</button>
+                </div>
+                <div class="apropos-card">
+                    <span class="apropos-card-icon">⭐</span>
+                    <p>Mes aptitudes</p>
+                    <button class="open-modal" data-modal="aptitudes">Voir mes aptitudes</button>
+                </div>
             </div>
-            <div class="projet">
-                <p>Venez découvrir les points essentiels de ma personnalité :</p>
-                <button class="open-modal" data-modal="passions">Voir mes centres d'intérêt</button>
-            </div>
-            <div class="projet">
-                <p>Je propose également de jeter un oeil à mon CV :</p>
-                <button class="open-modal" data-modal="cv">Accéder à mon CV</button>
-            </div>
-            <div class="projet">
-                <p>Et enfin, je vous propose de voir les aptitudes que j'ai su développer au cours de ma formation :</p>
-                <button class="open-modal" data-modal="aptitudes">Voir mes aptitudes</button>
-            </div>
-
             <!-- Conteneurs dynamiques -->
             <div id="apropos-formation" class="apropos-detail" style="display:none;">
                 <h3>Ma formation</h3>
@@ -210,7 +232,8 @@
                         </div>
                         <div class="flip-card-back">
                             <div class="back-content">
-                                <h3>Maquette permettant de réaliser des opérations de vérification de systèmes électroniques</h3>
+                                <h3>Maquette permettant de réaliser des opérations de vérification de systèmes
+                                    électroniques</h3>
                                 <button class="expand-btn" data-modal="projet4">Plus de détails</button>
                             </div>
                         </div>
@@ -223,7 +246,8 @@
                         </div>
                         <div class="flip-card-back">
                             <div class="back-content">
-                                <h3>Projet de mise en place d'une interface web pour une dispositif d'irrigation autonome</h3>
+                                <h3>Projet de mise en place d'une interface web pour une dispositif d'irrigation
+                                    autonome</h3>
                                 <button class="expand-btn" data-modal="projet5">Plus de détails</button>
                             </div>
                         </div>
@@ -290,9 +314,8 @@
         <div class="container">
             <h2>Compétences</h2>
             <p>
-                Cette section présente mes principales compétences techniques et méthodologiques acquises au cours de
-                mes études et projets.
-                Vous trouverez ci-dessous une visualisation de mes aptitudes dans quatre domaines clés.
+                Cette section présente les principales compétences travaillées et acquises au cours du BUT GEII.
+                Vous trouverez ci-dessous une visualisation de mon niveau d'acquisition dans ces quatre domaines clés.
             </p>
             <div class="competences-list">
                 <!-- Compétence : Concevoir -->
