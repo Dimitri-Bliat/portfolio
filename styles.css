@@ -8,7 +8,7 @@ body {
     position: relative;
     overflow-x: hidden;
     transition: none;
-    padding-top: 110px; /* ajuste selon la hauteur de ton header */
+    padding-top: 140px; /* augmente la valeur pour plus d'espace */
     background: linear-gradient(to bottom, #0a0a23 0%, #13162a 100%);
 }
 
@@ -42,7 +42,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 72px;
+    min-height: 52px;
+    padding: 0;
 }
 
 header .container {
@@ -56,7 +57,7 @@ header .container {
 }
 
 header h1 {
-    font-size: 2.1rem;
+    font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: 2px;
     margin: 0;
@@ -77,7 +78,7 @@ header h1:hover {
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 32px;
+    gap: 18px;
     margin: 0;
     padding: 0;
     align-items: center;
@@ -91,46 +92,42 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
-    padding: 8px 22px;
-    border-radius: 24px;
-    transition: 
-        color 0.2s,
-        background 0.2s,
-        box-shadow 0.2s;
-    /* SUPPRIMER ou commenter la ligne suivante */
-    /* box-shadow: 0 0 8px #3fa7d6 inset; */
+    font-size: 0.98rem;
+    padding: 6px 12px;
+    border-radius: 0;
+    transition: color 0.2s;
     box-shadow: none;
     letter-spacing: 1px;
+    position: relative;
+    background: none;
+    overflow: hidden;
+}
+
+header nav ul li a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 6px;
+    height: 3px;
+    background: #3fa7d6;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s cubic-bezier(.4,0,.2,1);
+    z-index: 2;
 }
 
 header nav ul li a:hover,
 header nav ul li a.active {
-    color: #0a0a23;
-    background: #3fa7d6;
-    /* SUPPRIMER ou commenter la ligne suivante */
-    /* box-shadow: 0 0 16px #3fa7d6, 0 2px 8px #1e2746; */
-    box-shadow: none;
+    color: #3fa7d6;
+    background: none;
 }
 
-header nav ul li a.active {
-    position: relative;
-    background: #3fa7d6;
-    color: #0a0a23;
-    box-shadow: none;
-}
-
+header nav ul li a:hover::after,
 header nav ul li a.active::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 24px;
-    right: 24px;
-    bottom: 6px;
-    height: 4px;
-    border-radius: 2px;
-    background: #ffcc00; /* couleur de la barre, change si besoin */
-    z-index: 2;
+    transform: scaleX(1);
 }
 
 @media (max-width: 900px) {
@@ -369,7 +366,7 @@ button:hover, .open-modal:hover {
     padding: 32px 24px;
     border-radius: 16px;
     width: 95%;
-    max-width: 900px;
+    max-width: 1100px;
     color: #e0e6f0;
     position: relative;
     box-shadow: none;
@@ -522,6 +519,10 @@ html {
   transform: rotateY(180deg);
 }
 
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -664,5 +665,257 @@ html {
   height: auto;
   min-height: 0;
   max-height: 340px;
+}
+
+.competences-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+    margin-top: 32px;
+}
+.competence-item {
+    background: rgba(20, 40, 70, 0.92);
+    border-radius: 14px;
+    padding: 24px 16px;
+    box-shadow: 0 2px 16px #1e2746;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+}
+.competence-item:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 32px #3fa7d6, 0 2px 16px #1e2746;
+    z-index: 2;
+}
+
+.competence-details {
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s, max-height 0.5s;
+    overflow: hidden;
+    margin-top: 18px;
+    color: #fff;
+    font-size: 1.08em;
+    width: 100%;
+    text-align: left;
+    padding-left: 12px;
+}
+.competence-item:hover .competence-details {
+    opacity: 1;
+    max-height: 2000px; /* ou une valeur très grande */
+}
+.competence-item h3 {
+    margin-bottom: 18px;
+    color: #3fa7d6;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.competences-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+}
+.competence-graph-horizontal {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(10, 18, 38, 0.7);
+    border-radius: 10px;
+    padding: 18px 18px 18px 0;
+    position: relative;
+    min-height: 120px;
+}
+.x-axis {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 70px;
+    right: 18px;
+    top: 0;
+    font-size: 0.95em;
+    color: #b0b8d1;
+    pointer-events: none;
+    z-index: 2;
+}
+.x-axis span {
+    flex: 1;
+    text-align: right;
+    transform: translateX(-50%);
+}
+.barh-group {
+    display: flex;
+    align-items: center;
+    margin: 24px 0 0 0;
+    gap: 12px;
+}
+.barh-label {
+    width: 60px;
+    text-align: right;
+    color: #3fa7d6;
+    font-weight: 700;
+    font-size: 1.05em;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+.barh-bar {
+    width: 100%;
+    position: relative;
+    height: 28px;
+    background: none;
+    box-shadow: none;
+    border-radius: 8px;
+    display: block;
+    /* plus de flex ici */
+}
+
+.barh-bar-inner {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.4s;
+    position: relative;
+    /* plus de display: flex ni align-items */
+    /* plus de min-width */
+}
+.bar-value {
+    display: inline-block;
+    min-width: 36px;
+    margin-left: 16px;
+    color: #fff;
+    font-size: 1.18em;
+    font-weight: bold;
+    background: rgba(10,10,35,0.92);
+    padding: 2px 14px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #1e2746;
+    letter-spacing: 1px;
+    text-align: right;
+}
+.barh-bar-inner::after {
+    display: none !important;
+}
+
+.barh-bar-inner::after {
+    content: attr(data-value);
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.15em;
+    font-weight: bold;
+    background: rgba(10,10,35,0.85);
+    padding: 2px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #1e2746;
+    letter-spacing: 1px;
+    z-index: 2;
+    pointer-events: none;
+}
+.competence-graph-horizontal {
+    min-height: 120px;
+}
+
+/* Couleurs pour Concevoir (rouge) */
+.bar-concevoir1 {
+    background: linear-gradient(90deg, #ff6b6b 60%, #ff8787 100%);
+}
+.bar-concevoir2 {
+    background: linear-gradient(90deg, #e63946 60%, #b71c1c 100%);
+}
+.bar-concevoir3 {
+    background: linear-gradient(90deg, #b71c1c 60%, #7f1010 100%);
+}
+
+/* Couleurs pour Vérifier (orange) */
+.bar-verifier1 {
+    background: linear-gradient(90deg, #ffb347 60%, #ffd580 100%);
+}
+.bar-verifier2 {
+    background: linear-gradient(90deg, #ff9800 60%, #ff6f00 100%);
+}
+.bar-verifier3 {
+    background: linear-gradient(90deg, #ff6f00 60%, #b26500 100%);
+}
+
+/* Couleurs pour Maintenir (jaune) */
+.bar-maintenir1 {
+    background: linear-gradient(90deg, #ffe066 60%, #fff9b0 100%);
+}
+.bar-maintenir2 {
+    background: linear-gradient(90deg, #ffd600 60%, #ffea00 100%);
+}
+.bar-maintenir3 {
+    background: linear-gradient(90deg, #ffea00 60%, #b2a300 100%);
+}
+
+/* Couleurs pour Intégrer (vert) */
+.bar-integrer1 {
+    background: linear-gradient(90deg, #51cf66 60%, #b2f2bb 100%);
+}
+.bar-integrer2 {
+    background: linear-gradient(90deg, #38b000 60%, #70e000 100%);
+}
+.bar-integrer3 {
+    background: linear-gradient(90deg, #008000 60%, #14532d 100%);
+}
+
+.competence-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: rgba(20, 40, 70, 0.96);
+    color: #fff;
+    font-size: 1em;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.competence-table th, .competence-table td {
+    border: 1px solid #3fa7d6;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+.competence-table th {
+    background: #232946;
+    color: #3fa7d6;
+    font-weight: 700;
+}
+.competence-table tr:nth-child(even) {
+    background: rgba(63, 167, 214, 0.07);
+}
+.competence-table ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+/* Justifier le texte dans la section À Propos */
+#apropos .container p {
+    text-align: justify;
+}
+
+/* Justifier le texte dans les modales À propos */
+#modalBody p {
+    text-align: justify;
+}
+
+/* Agrandir la modale pour le CV */
+#modal .modal-content {
+    max-width: 1100px;
+}
+
+/* Modale aptitudes : aligner les listes côte à côte */
+#modalBody ul {
+    margin: 0 0 16px 18px;
+    padding-left: 18px;
+}
+#modalBody h3 {
+    color: #3fa7d6;
+    margin-bottom: 8px;
 }
 
